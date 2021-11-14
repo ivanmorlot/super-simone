@@ -25,7 +25,7 @@
           <h2>Règles du jeu</h2>
         </div>
         <div class="modal-body">
-          <p>1) Répétez les notes jouées par l'ordinateur.</p>
+          <p>1) Répétez les notes jouées par Simone dans le bon ordre.</p>
           <p>2) Ne vous trompez pas ou la partie est perdue !</p>
         </div>
         <div class="modal-footer">
@@ -43,7 +43,7 @@
         </div>
         <div class="modal-body">
           <p>Quelle domage d'être aussi mauvais(e)...</p>
-          <button class="start">Nouvelle partie</button>
+          <button class="game-start">Nouvelle partie</button>
         </div>
       </div>
     </div>
@@ -75,33 +75,33 @@
     </div>
 
     <div class="container">
-      <div class="simone">
-        <button class="red"></button>
+      <div class="game-console simone">
+        <button class="game-button red"></button>
 
-        <button class="blue"></button>
+        <button class="game-button blue"></button>
 
-        <button class="green"></button>
+        <button class="game-button green"></button>
 
-        <button class="yellow"></button>
+        <button class="game-button yellow"></button>
 
         <div class="info">
-          <div class="turn">C'est au tour de Simone !</div>
+          <div class="game-turn"><span></span></div>
 
           <div class="score">
             <span>Tours validés :</span>
-            <div class="round">0</div>
+            <div class="game-rounds">0</div>
 
             <span>Actions réussies :</span>
-            <div class="action">0</div>
+            <div class="game-actions">0</div>
           </div>
         </div>
       </div>
     </div>
 
     <div class="controls">
-      <button class="start">Nouvelle partie</button>
+      <button class="game-start">Nouvelle partie</button>
 
-      <button class="retry">Réinitialiser les scores</button>
+      <button class="game-reset">Abandonner</button>
     </div>
   </body>
 </html>

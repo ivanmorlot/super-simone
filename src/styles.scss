@@ -1,32 +1,14 @@
+/* Variables */
 $prime: slateblue;
 $second: antiquewhite;
 
+/* Fixes */
 * {
   box-sizing: border-box;
 }
 
-body {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
-  
-  font-family: sans-serif;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: column;
-  margin: 0;
-  background-color: rgb(27, 10, 2);
-
-  button {
-    cursor: pointer;
-  }
+:focus-visible {
+  outline: none;
 }
 
 /* Background image */
@@ -56,6 +38,30 @@ img.background {
   }
   80%{
     opacity: 1;
+  }
+}
+
+body {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+  
+  font-family: sans-serif;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  margin: 0;
+  background-color: rgb(27, 10, 2);
+
+  button {
+    cursor: pointer;
   }
 }
 

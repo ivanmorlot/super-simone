@@ -1,25 +1,34 @@
-// Get the modal
-var $modal = document.getElementById("myModal");
+var $infoModal = document.getElementById('info-modal');
+var $infoButton = document.getElementById('info-button');
+var $infoClose = document.getElementsByClassName('close')[0];
+var $simoneButtons = document.querySelectorAll('.simone button');
 
-// Get the button that opens the modal
-var $btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var $close = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-$btn.onclick = function() {
-  $modal.style.display = "block";
+$infoButton.onclick = function() {
+  $infoModal.style.display = 'block';
 }
 
-// When the user clicks on <span> (x), close the modal
-$close.onclick = function() {
-  $modal.style.display = "none";
+$infoClose.onclick = function() {
+  $infoModal.style.display = 'none';
 }
 
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == $modal) {
-    $modal.style.display = "none";
+  if (event.target == $infoModal) {
+    $infoModal.style.display = 'none';
   }
 }
+
+$simoneButtons.forEach(function($button) {
+  $button.addEventListener('click', function (target) {
+    $button.classList.toggle('click');
+
+    if ($button.classList.contains('red')) $button.innerHTML = 'Do';
+    if ($button.classList.contains('blue')) $button.innerHTML = 'Ré';
+    if ($button.classList.contains('green')) $button.innerHTML = 'Mi';
+    if ($button.classList.contains('yellow')) $button.innerHTML = 'Fa';
+
+    setTimeout(() => {
+      $button.classList.toggle('click');
+      $button.innerHTML = '';
+    }, 500);
+  });
+});

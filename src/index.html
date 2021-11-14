@@ -1,0 +1,107 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+
+    <title>Super Simone</title>
+
+    <link rel="stylesheet" href="styles.scss" />
+
+    <script type="module" src="app.js"></script>
+  </head>
+
+  <body>
+    <img src="https://i.ibb.co/gyCL5tg/forest-ga20efd44f-1920.jpg" alt="Background image" class="background">
+
+    <!-- Trigger Info Modal -->
+    <button id="myBtn">?</button>
+
+    <!-- Info Modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Règles du jeu</h2>
+        </div>
+        <div class="modal-body">
+          <p>Répétez les notes jouées par l'ordinateur</p>
+          <p>Ne vous trompez pas ou la partie est perdue</p>
+        </div>
+        <div class="modal-footer">
+          <h3>A vous de jouer !</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game Over Modal -->
+    <div id="myGameOverModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>C'est perdu !</h2>
+        </div>
+        <div class="modal-body">
+          <p>Quelle domage d'être aussi mauvais(e)...</p>
+          <button class="start">Nouvelle partie</button>
+        </div>
+      </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <defs>
+        <filter id="gooey">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+          <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="highContrastGraphic" />
+          <feComposite in="SourceGraphic" in2="highContrastGraphic" operator="atop" />
+        </filter>
+      </defs>
+    </svg>
+
+    <div id="title">
+      Super Simone
+      <span class="bubbles">
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+      </span>
+    </div>
+
+    <div class="container">
+      <div class="simone">
+        <button class="red"></button>
+
+        <button class="blue"></button>
+
+        <button class="green"></button>
+
+        <button class="yellow"></button>
+
+        <div class="info">
+          <div class="turn">C'est au tour de Simone</div>
+
+          <div class="score">
+            <span>Tours validés :</span>
+            <div class="round">0</div>
+
+            <span>Actions réussies :</span>
+            <div class="action">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="start">Nouvelle partie</button>
+
+      <button class="retry">Réinitialiser les scores</button>
+    </div>
+  </body>
+</html>

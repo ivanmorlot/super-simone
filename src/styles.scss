@@ -1,0 +1,250 @@
+$prime: slateblue;
+$second: antiquewhite;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+  
+  font-family: sans-serif;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  margin: 0;
+  background-color: rgb(27, 10, 2);
+
+  button {
+    cursor: pointer;
+  }
+}
+
+img.background {
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 1024px) {
+  img.background {
+    left: 50%;
+    margin-left: -512px;
+  }
+}
+
+.simone {
+  height: 30rem;
+  width: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $prime;
+  border: solid 1rem $prime;
+  box-shadow: 0 0 6rem 0.1rem darkslateblue;
+  border-radius: 50%;
+  flex-wrap: wrap;
+  overflow: hidden;
+
+  button {
+    cursor: pointer;
+    border: solid .6rem $prime;
+    height: 50%;
+    width: 50%;
+  }
+
+  button.red {
+    background-color: red;
+  }
+
+  button.blue {
+    background-color: blue;
+  }
+  
+  button.green {
+    background-color: green;
+  }
+
+  button.yellow {
+    background-color: yellow;
+  }
+
+  .info {
+    color: $second;
+    height: 12rem;
+    width: 12rem;
+    position: absolute;
+    background-color: $prime;
+    border: solid 0.5rem $prime;
+    box-shadow: 0 0 5rem 0.1rem darkslateblue;
+    border-radius: 50%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+//
+
+/* Modal button */
+#myBtn {
+  align-self: flex-end;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+//
+
+
+svg {
+  position: absolute;
+  top: -4000px;
+  left: -4000px;
+}
+
+#title {
+  color: $second;
+  z-index: 5;
+  margin-bottom: 3rem;
+  font-size: 3rem;
+  padding: 1rem;
+  margin: 2rem;
+  font-size: 2rem;
+  border: none;
+  filter: url('#gooey');
+  position: relative;
+  background-color: $prime;
+
+  &:focus {
+    outline: none;
+  }
+
+  .bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    .bubble {
+      background-color: $prime;
+      border-radius: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      z-index: -1;
+
+      @for $bubble from 1 through 10 {
+        &:nth-child(#{$bubble}) {
+          $size: 25px;
+          left: (random(90) + 10)+px;
+          width: $size;
+          height: $size;
+          animation: move-#{$bubble} #{3 + $bubble*0.02}s infinite;
+          animation-delay: #{$bubble*0.2}s;
+        }
+      }
+    }
+  }
+}
+
+@for $bubble from 1 through 10 {
+  @keyframes move-#{$bubble} {
+    0% {
+      transform: translate(0, 0);
+    }
+    99% {
+      transform: translate(0, -(random(80) + 50)+px);
+    }
+    100% {
+      transform: translate(0, 0);
+      opacity: 0;
+    }
+  }
+}

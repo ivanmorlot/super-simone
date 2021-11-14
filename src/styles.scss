@@ -132,8 +132,14 @@ body {
       margin-bottom: 0.5rem;
     }
 
+    .turn, .round, .action {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
     .turn {
-      max-width: 80%;
+      max-width: 70%;
+      margin: 1rem 0;
     }
   }
 }

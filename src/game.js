@@ -205,6 +205,13 @@ export default class Game {
     }
   }
 
+  gameOver() {
+    this.isGameActive = false;
+    this.setPlayerTurn(false);
+    this.$gameConsole.querySelector('.game-turn span').innerHTML = '';
+    document.querySelector('#game-over-modal').style.display = 'block';
+  }
+
   newRound() {
     if (this.isGameActive) {
       const gameThis = this;
@@ -226,8 +233,7 @@ export default class Game {
             gameThis.validatedActions++;
             gameThis.$gameConsole.querySelector('.game-actions').innerHTML = gameThis.validatedActions;
           } else {
-            gameThis.setup()
-            document.querySelector('#game-over-modal').style.display = 'block';
+            gameThis.gameOver();
           }
         }
 

@@ -85,7 +85,7 @@ body {
   overflow: hidden;
 
   .game-button {
-    cursor: pointer;
+    cursor: default;
     height: 50%;
     width: 50%;
     opacity: 1;
@@ -94,6 +94,10 @@ body {
     font-size: 4rem;
     color: $second;
     margin: 0;
+  }
+
+  .game-button.player {
+    cursor: pointer;
   }
 
   .game-button.click {
@@ -138,7 +142,7 @@ body {
       margin-bottom: 0.5rem;
     }
 
-    .game-rounds, .game-actions {
+    .game-turn, .game-rounds, .game-actions {
       font-weight: bold;
       font-size: 1.1rem;
     }
@@ -150,7 +154,6 @@ body {
       height: 2.5rem;
       max-width: 70%;
       margin: 1rem 0;
-      font-size: 1.1rem;
       
       span {
         margin: 0;

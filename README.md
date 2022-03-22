@@ -1,3 +1,3 @@
 # super-simone
 
-This simple game is a school project.
+This simple Super Simon game is a school project.
